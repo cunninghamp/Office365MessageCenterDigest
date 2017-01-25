@@ -1,0 +1,6 @@
+Get-MessageCenterDigest.xml
+UnifiedGroups-*.xml
+.vscode
+history/
+MessageCenterDigest.html
+MessageCenterArchive*.xml

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Settings>
+    <EmailSettings>
+        <From>reports@exchangeserverpro.net</From>
+        <To>o365admins@exchangeserverpro.net</To>
+        <Subject>Office 365 Message Center Digest</Subject>
+        <!-- If SmtpServer is empty, the script will autodetect -->
+        <SmtpServer></SmtpServer>
+    </EmailSettings>
+</Settings>
