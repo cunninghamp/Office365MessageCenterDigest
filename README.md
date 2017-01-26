@@ -20,7 +20,7 @@ To install the script:
 PS> Install-Module -Name O365ServiceCommunications
 ```
 
-3. Download the latest release from [GitHub]() or the [TechNet Script Gallery]().
+3. Download the latest release from the [TechNet Script Gallery](https://gallery.technet.microsoft.com/office/Office-365-Message-Center-de1f7e5a).
 4. Unzip the files to a folder on the workstation or server where you want to run the script.
 5. Rename *Get-MessageCenterDigest.xml.sample* to *Get-MessageCenterDigest.xml*
 6. Edit *Get-MessageCenterDigest.xml* with appropriate email settings for your environment. If you exclude the SMTP server, the script will send the report email to the first MX record for the domain of the *To* address.
