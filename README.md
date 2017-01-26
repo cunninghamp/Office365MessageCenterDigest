@@ -13,7 +13,7 @@ This script has a dependency on the following functions and modules:
 
 To install the script:
 
-1. Add the Get-StoredCredential function to your PowerShell profile.
+1. Add the New-StoredCredential & Get-StoredCredential functions to your [PowerShell profile](http://practical365.com/exchange-server/create-powershell-profile/)
 2. Install the O365ServiceCommunications module:
 
 ```
