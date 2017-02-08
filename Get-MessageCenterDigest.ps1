@@ -156,34 +156,46 @@ if ([string]::IsNullOrWhiteSpace($settings.EmailSettings.SmtpServer)) {
 #This function generates the HTML for each message being added to a table
 Function Get-MessageHtml()
 {
-	param( $message )
+  param( $message )
 	
-    $Messagehtml = $null
+  $Messagehtml = $null
 
-    $Messagehtml += "<tr>
-                        <th colspan=""6"">$($Message."Message ID") - $($Message."Title")</th>
+  $f = $Message.Messages -replace("`n",'<br>') -replace([char]8217,"'") -replace([char]8220,'"') -replace([char]8221,'"') -replace('\[','<b><i>') -replace('\]','</i></b>')
+
+  $t = $Message.Title -replace("`n",'<br>') -replace([char]8217,"'") -replace([char]8220,'"') -replace([char]8221,'"')
+  
+  $u = switch ($Message."Urgency"){
+    'Critical' {' style="color:#ffffff;background-color:#ff0000;font-weight:bold"'} #red backgound/white text/bold
+    'High'     {' style="color:#ff0000;font-weight:bold"'}                          #red text/bold
+    'Normal'   {' style="color:#000000"'}                                           #black text
+    Default    {' style="color:#000080;font-weight:bold"'}                          #navy text/bold
+  }
+
+  $Messagehtml += "<tr>
+                    <th colspan=""6"" style=""color:#ffffff;background-color:#000099""><H4>$($Message."Message ID") - $t</H4></th>
                     </tr>
                     <tr>
-                        <th>Category</th>
-                        <th>Published</th>
-                        <th>Expires</th>
-                        <th>Urgency</th>
-                        <th>Action Type</th>
-                        <th>Required By</th>
+                    <th>Category</th>
+                    <th>Published</th>
+                    <th>Expires</th>
+                    <th>Urgency</th>
+                    <th>Action Type</th>
+                    <th>Required By</th>
                     </tr>
                     <tr>
-                        <td>$($Message."Category")</td>
-                        <td>$($Message."Start Time")</td>
-                        <td>$($Message."End Time")</td>
-                        <td>$($Message."Urgency")</td>
-                        <td>$($Message."Action")</td>
-                        <td>$($Message."Action Required By")</td>
+                    <td align=""center"">$($Message."Category")</td>
+                    <td align=""center"">$($Message."Start Time")</td>
+                    <td align=""center"">$($Message."End Time")</td>
+                    <td align=""center""$u>$($Message."Urgency")</td>
+                    <td align=""center"">$($Message."Action")</td>
+                    <td align=""center"" style=""color:#ff0000""><b>$($Message."Action Required By")</b></td>
                     </tr>
                     <tr>
-                        <td colspan=""6"">$($Message.Messages)<br/><br/><a href=""$($Message.Link)"">More Info</a></td>
-                    </tr>"
+                    <td colspan=""6"">$f<br/><a href=""$($Message.Link)"">More Info</a></td>
+                  </tr>
+                  <tr><td colspan=""6"" style=""border:none""></td></tr>"
 	
-	return $Messagehtml
+  return $Messagehtml
 }
 
 #endregion Functions
@@ -320,6 +332,7 @@ $htmlhead="<html>
 			H1{font-size: 22px;}
 			H2{font-size: 18px; padding-top: 10px;}
 			H3{font-size: 16px; padding-top: 8px;}
+            H4{font-size: 12px; padding-top: 4px;}
 			TABLE{border: 1px solid black; border-collapse: collapse; font-size: 8pt; table-layout: fixed; width: 800px;}
             TABLE.summary{text-align: center; width: auto;}
 			TH{border: 1px solid black; background: #dddddd; padding: 5px; color: #000000;}
@@ -379,8 +392,8 @@ if (-not ($noEmail) -and (($NewMessageCount -gt 0) -or ($ChangedMessageCount -gt
         Write-Verbose "Email report sent."
     }
     catch {
-        Write-Warning $_.Exception.Message
         Write-Verbose "Email report not sent."
+        throw $_.Exception.Message
     }
 }
 
