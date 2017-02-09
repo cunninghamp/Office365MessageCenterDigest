@@ -59,4 +59,8 @@ Written by:
 
 - Paul Cunningham, [Blog](http://practical365.com) | [GitHub](https://github.com/cunninghamp) | [Twitter](https://twitter.com/paulcunningham)
 
+Additional contributions:
+
+- Ryan Mitchell (improved report styling)
+
 For more Office 365 tips, tutorials, and news check out [Practical 365](http://practical365.com).
