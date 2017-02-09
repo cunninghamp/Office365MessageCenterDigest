@@ -25,11 +25,15 @@ https://github.com/cunninghamp/Office365MessageCenterDigest
 .NOTES
 Written by Paul Cunningham
 
-For more Office 365 tips, tutorials and news check out Practical365.com.
+Additional contributions:
 
+- Ryan Mitchell (improved report styling)
+
+For more Office 365 tips, tutorials and news check out Practical365.com.
 
 Version history:
 V1.00, 25/01/2017 - Initial version
+V1.01, 09/02/2017 - Updated with better report styling
 
 
 License:
