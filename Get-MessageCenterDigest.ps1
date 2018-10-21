@@ -23,13 +23,18 @@ be available.
 https://github.com/cunninghamp/Office365MessageCenterDigest
 
 .NOTES
-Written by Paul Cunningham
+Written by: Paul Cunningham
+
+Find me on:
+
+* My Blog:	https://paulcunningham.me
+* Twitter:	https://twitter.com/paulcunningham
+* LinkedIn:	https://au.linkedin.com/in/cunninghamp/
+* Github:	https://github.com/cunninghamp
 
 Additional contributions:
 
 - Ryan Mitchell (improved report styling)
-
-For more Office 365 tips, tutorials and news check out Practical365.com.
 
 Version history:
 V1.00, 25/01/2017 - Initial version
