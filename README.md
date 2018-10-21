@@ -4,7 +4,7 @@ Get-MessageCenterDigest.ps1 is a PowerShell script that provides an email and HT
 
 The script will store information about the Message Center messages for a tenant in a file named *MessageCenterArchive-tenantdomain.xml*, located in the same folder as the script. The first time you run the script, all messages will be reported as "New". On subsequent runs, the script will use the previous results to determine which messages are new or changed since the last time the script was run.
 
-##Installation
+## Installation
 
 This script has a dependency on the following functions and modules:
 
@@ -27,7 +27,7 @@ PS> Install-Module -Name O365ServiceCommunications
 7. Create a new stored credential by running New-StoredCredential
 8. Run the script using the usage examples below.
 
-##Usage  
+## Usage  
 
 Run the script in a PowerShell console.
 
@@ -53,14 +53,19 @@ Run the script, suppressing the email report, and generating a HTML file instead
 .\Get-MessageCenterDigest.ps1 -UseCredential admin@tenantname.onmicrosoft.com -NoEmail
 ```
 
-##Credits
+## Credits
 
-Written by:
+Written by: Paul Cunningham
 
-- Paul Cunningham, [Blog](http://practical365.com) | [GitHub](https://github.com/cunninghamp) | [Twitter](https://twitter.com/paulcunningham)
+Find me on:
+
+* My Blog:	https://paulcunningham.me
+* Twitter:	https://twitter.com/paulcunningham
+* LinkedIn:	https://au.linkedin.com/in/cunninghamp/
+* Github:	https://github.com/cunninghamp
+
+Check out my [books](https://paulcunningham.me/books/) and [courses](https://paulcunningham.me/training/) to learn more about Office 365 and Exchange Server.
 
 Additional contributions:
 
 - Ryan Mitchell (improved report styling)
-
-For more Office 365 tips, tutorials, and news check out [Practical 365](http://practical365.com).
